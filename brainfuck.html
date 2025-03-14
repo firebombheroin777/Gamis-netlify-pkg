@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Brainfuck Output</title>
+</head>
+<body>
+<pre id="output"></pre>
+<script>
+async function runBrainfuck() {
+    try {
+        const response = await fetch('B.b'); // Fetch the brainfuck file
+        const brainfuckCode = await response.text();
+
+        function brainfuck(code, input) {
+            let memory = Array(30000).fill(0);
+            let pointer = 0;
+            let output = "";
+            let inputPointer = 0;
+            let loopStack = [];
+
+            for (let i = 0; i < code.length; i++) {
+                switch (code[i]) {
+                    case '>':
+                        pointer++;
+                        break;
+                    case '<':
+                        pointer--;
+                        break;
+                    case '+':
+                        memory[pointer]++;
+                        memory[pointer] %= 256;
+                        break;
+                    case '-':
+                        memory[pointer]--;
+                        if (memory[pointer] < 0) {
+                            memory[pointer] += 256;
+                        }
+                        break;
+                    case '.':
+                        output += String.fromCharCode(memory[pointer]);
+                        break;
+                    case ',':
+                        memory[pointer] = input.charCodeAt(inputPointer);
+                        inputPointer++;
+                        break;
+                    case '[':
+                        if (memory[pointer] === 0) {
+                            let loopCount = 1;
+                            while (loopCount > 0) {
+                                i++;
+                                if (code[i] === '[') {
+                                    loopCount++;
+                                } else if (code[i] === ']') {
+                                    loopCount--;
+                                }
+                            }
+                        } else {
+                            loopStack.push(i);
+                        }
+                        break;
+                    case ']':
+                        if (memory[pointer] !== 0) {
+                            i = loopStack[loopStack.length - 1] - 1;
+                        } else {
+                            loopStack.pop();
+                        }
+                        break;
+                }
+            }
+            return output;
+        }
+
+        const output = brainfuck(brainfuckCode, "");
+        document.getElementById('output').textContent = output;
+
+    } catch (error) {
+        console.error('Error fetching or running Brainfuck code:', error);
+        document.getElementById('output').textContent = 'Error: Could not run Brainfuck code.';
+    }
+}
+
+runBrainfuck();
+</script>
+</body>
+</html>

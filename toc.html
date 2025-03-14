@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toc</title>
+    <style>
+        body {
+            padding-top: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url("media/pixilart-drawing-1.gif");
+            background-color: #eb1c24;
+            background-repeat: repeat-y;
+            background-size: 100%;
+            position: relative;
+        }
+
+        .link-Lander {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #242424;
+            border-radius: 5px;
+        }
+
+        .containersaur {
+            position: absolute;
+            top: 25px;
+            right: 10px;
+            width: 120px;
+            height: 120px;
+        }
+
+        .link-dinosaur {
+            width: 120px;
+            height: 120px;
+            transform: translateX(20px);
+        }
+
+        .container {
+            width: 75%;
+            background-color: #b34040;
+            padding: 20px;
+            border-radius: 5px;
+            border: 5px solid #000;
+            position: relative;
+        }
+
+        .links-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow links to wrap to the next line */
+            justify-content: space-around; /* Distribute space evenly */
+        }
+
+        .link-div {
+            width: calc(50% - 20px); /* Adjust for spacing */
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #242424;
+            border-radius: 5px;
+            background-color: #c97b7b;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            box-sizing: border-box; /* Include padding and border in width */
+        }
+
+        .link-div:hover {
+            transform: scale(1.05);
+            background-color: #f8f8f8;
+        }
+
+        .link-div img {
+            width: 330px;
+            max-height: 330px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .badges a {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .floating-title {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #000;
+            animation: float 3s infinite alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(-50%, 0);
+            }
+            100% {
+                transform: translate(-50%, -20px);
+            }
+        }
+
+      @media (max-width: 768px) {
+        .link-div {
+          width: calc(100% - 20px);
+        }
+      }
+    </style>
+</head>
+<body>
+    <a href="index.html">
+        <img src="media/bn2-10000.webp" class="link-Lander">
+    </a>
+    <div class="containersaur">
+        <a href="dinosaur.html">
+            <img src="media/47.webp" class="link-dinosaur">
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="floating-title">Table of Contents</div>
+        <h1>Welcome to My Very Cool Professional Webpage</h1>
+
+        <div class="links-container">
+            <a href="Gamis.html" class="link-div">
+                <img src="media/IMG_0966.jpeg">
+                <h2>Games</h2>
+                <p>These are some games I stole from github</p>
+            </a>
+
+            <a href="ab-me.html" class="link-div">
+                <img src="media/bn2-.jpeg">
+                <h2>About Me</h2>
+                <p>i </p>
+            </a>
+
+            <a href="page3.html" class="link-div">
+                <img src="image3.jpg" alt="Image for Page 3">
+                <h2>Page 3</h2>
+                <p>desc</p>
+            </a>
+        </div>
+
+        <section class="badges">
+            <h2>Badges and Links</h2>
+            <a href="https://www.example.com">
+                <img src="badge1.png" alt="Badge 1">
+            </a>
+            <a href="https://www.anotherexample.com">
+                <img src="badge2.png" alt="Badge 2">
+            </a>
+        </section>
+    </div>
+</body>
+</html>
