@@ -1,13 +1,17 @@
 /* style.scss */
+body {
+    background-image: url("IMG_0978.webp"); /* Set the background image */
+    background-size: cover; /* Cover the entire container */
+    background-repeat: y;
+    background-color: #181F2A
+}
+
+/* style.scss */
 #image-container {
     position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-image: url("IMG_0978.webp"); /* Set the background image */
-    background-size: cover; /* Cover the entire container */
-    background-repeat: y;
-    background-color: #181F2A
 
     .random-image {
         position: absolute;
