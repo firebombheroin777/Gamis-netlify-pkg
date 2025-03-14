@@ -2,14 +2,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('image-container');
     const imageSources = [
-        'https://placekitten.com/200/300',
-        'https://placekitten.com/400/250',
-        'https://placekitten.com/300/350',
-        'https://placekitten.com/250/200',
-        'https://placekitten.com/350/400',
-        'https://placekitten.com/450/300',
-        'https://placekitten.com/300/200',
-        'https://placekitten.com/200/400',
+        '47.webp',
+        '47.webp',
+        '47.webp',
+        '47.webp',
+        '47.webp',
+        '47.webp',
+        '47.webp',
+        '47.webp',
     ];
 
     const numberOfImages = 20;
