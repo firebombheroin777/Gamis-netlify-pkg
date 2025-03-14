@@ -6,6 +6,7 @@
     overflow: hidden;
     background-image: url("IMG_0978.webp"); /* Set the background image */
     background-size: cover; /* Cover the entire container */
+    background-repeat: y;
 
     .random-image {
         position: absolute;
