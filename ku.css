@@ -1,0 +1,70 @@
+/* style.scss */
+#image-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("IMG_0978.webp"); /* Set the background image */
+    background-size: cover; /* Cover the entire container */
+
+    .random-image {
+        position: absolute;
+
+        &.img1 {
+            width: 150px;
+            height: 200px;
+            left: 50px;
+            top: 100px;
+        }
+
+        &.img2 {
+            width: 250px;
+            height: 180px;
+            left: 300px;
+            top: 50px;
+        }
+
+        &.img3 {
+            width: 180px;
+            height: 220px;
+            left: 600px;
+            top: 200px;
+        }
+
+        &.img4 {
+            width: 120px;
+            height: 150px;
+            left: 100px;
+            top: 400px;
+        }
+
+        &.img5 {
+            width: 200px;
+            height: 250px;
+            left: 450px;
+            top: 350px;
+        }
+
+        &.img6 {
+            width: 280px;
+            height: 200px;
+            left: 750px;
+            top: 100px;
+        }
+
+        &.img7 {
+            width: 160px;
+            height: 130px;
+            left: 200px;
+            top: 600px;
+        }
+
+        &.img8 {
+            width: 130px;
+            height: 230px;
+            left: 900px;
+            top: 450px;
+        }
+        /* Add more image styles as needed, .img9, .img10, etc. */
+    }
+}
